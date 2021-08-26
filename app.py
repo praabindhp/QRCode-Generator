@@ -22,6 +22,16 @@ def decode():
     # Saving The QRCode Generted
     QRCodeImg.save("static/QR_Image.jpg")
 
+    # DECODING THE QRCODE
+
+    # Instantiating The QR DeCoder
+    QRDeCode = cv2.QRCodeDetector()
+
+    value, points, straight_qrcode = QRDeCode.detectAndDecode(cv2.imread("static/QR_Image.jpg"))
+
+    # Print The Value After DeCoding
+    print(value)
+
     return render_template('qrcode.html')
 
 if __name__ == '__main__':
