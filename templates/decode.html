@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
+    <title>QR DeCoder</title>
 </head>
 
 <body>
-    <h1>QR Code Generator</h1>
+    <h1>QR DeCoder</h1>
     <h2>Select File To DeCode</h2>
     <form action="/decode" method="POST" enctype="multipart/form-data">
         <input type="file" name="file" />
@@ -18,9 +18,13 @@
         <input type="reset" value="Reset" /><br>
     </form>
 
-    <h3>The DeCoded Data : </h3>
+    <h2>The DeCoded Data : </h2>
     <p>{{value}}</p>
     <img src="static/upload/QR_EnCode.jpg" alt="Uploaded QR Code">
+    <br>
+    <form action="/encode">
+        <input type="submit" value="QR - EnCode" />
+    </form>
 </body>
 
 </html>

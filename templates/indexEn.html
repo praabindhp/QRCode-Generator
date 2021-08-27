@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
+    <title>QR EnCoder</title>
 </head>
 
 <body>
-    <h1>QR Code Generator</h1>
+    <h1>QR EnCoder</h1>
     <form action="/qrcode" method="POST">
-        <label for="value">Enter Value To Convert</label><br><br>
+        <label for="value">Enter Data To Generate QR Code</label><br><br>
         <input type="text" name="value" name="value"><br><br>
         <input type="submit" value="Submit">
+    </form>
+    <br>
+    <form action="/decode">
+        <input type="submit" value="QR - DeCode" />
     </form>
 </body>
 
