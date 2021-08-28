@@ -1,6 +1,6 @@
 from flask import Flask, request, redirect, render_template
 from werkzeug.utils import secure_filename
-
+import pyzbar.pyzbar as pyzbar
 # Importing The QRCode Module
 import cv2
 import qrcode  # pip install qrcode
@@ -57,17 +57,14 @@ def save_file():
         filename = "QR_EnCode.jpg"
 
         f.save(app.config['UPLOAD_FOLDER'] + filename)
-    
-        # DECODING THE QRCODE
 
-    # Instantiating The QR DeCoder
-    QRDeCode = cv2.QRCodeDetector()
+    # DECODING THE QRCODE
 
-    value, points, straight_qrcode = QRDeCode.detectAndDecode(
-        cv2.imread("static/upload/QR_EnCode.jpg"))
+    QRDeCode = pyzbar.decode(cv2.imread("static/upload/QR_EnCode.jpg"))
+    value = QRDeCode[0].data.decode()
 
     # Displaying The Value After DeCoding
-    return render_template('decode.html', value = value)
+    return render_template('decode.html', value=value)
 
 if __name__ == '__main__':
     app.run(debug=True)
