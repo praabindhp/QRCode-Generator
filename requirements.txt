@@ -2,3 +2,4 @@ Flask
 Werkzeug
 opencv-python
 qrcode
+pyzbar

@@ -1,7 +1,7 @@
-from flask import Flask, request, render_template
-import pyzbar.pyzbar as pyzbar
+from flask import Flask, request, render_template # pip install Flask
+import pyzbar.pyzbar as pyzbar # pip install pyzbar
 # Importing The QRCode Module
-import cv2
+import cv2 # pip install opencv-python
 import qrcode # pip install qrcode
 
 app = Flask(__name__)
